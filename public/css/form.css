@@ -1,0 +1,298 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+:root {
+    --primary-color: rgba(14, 126, 197, 1);
+    --primary-gradient: linear-gradient(to top left, rgba(7, 113, 255, 1), rgba(8, 88, 196, 1));
+
+    --secondary-color: rgba(0, 255, 109, 1);
+    --form-border-radius: 30px;
+    /* --background-color: rgba(0, 0, 0, 0.05); */
+    --background-color: white;
+
+    --input-height: 40px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+    background-color: var(--background-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* ================================== ARCs ================================== */
+
+.arc {
+    pointer-events: none;
+}
+
+
+.top_arc {
+    position: absolute;
+    top: -380px;
+    /* right: -390px; */
+    right: -420px;
+
+}
+
+/* ================================== Form Main Area ================================== */
+
+.form {
+    display: flex;
+
+    width: 800px;
+    height: 525px;
+
+    position: absolute;
+    top: 23%;
+
+    /* animation: form_anim 10s forwards; */
+
+}
+
+input {
+    padding-left: 10px;
+}
+
+select {
+    padding-left: 10px;
+}
+
+select > option {
+    margin-left: 130px;
+}
+
+@keyframes form_anim {
+    0% {
+        width: 152px;
+        height: 100px;
+    }
+    30% {
+        width: 152px;
+        height: 100px;
+    }
+    50% {
+        width: 798px;
+        height: 525px;
+    }
+    100% {
+        /* width: 100px;
+        height: 100px; */
+        width: 800px;
+        height: 525px;
+    }
+}
+
+.triangle {
+    z-index: -1;
+
+    position: absolute;
+    left: -15%;
+
+    animation: flicker 10s infinite ease-in-out;
+}
+
+@keyframes flicker {
+    0% {
+        transform: rotate(0deg);
+    }
+    15% {
+        transform: rotate(20deg);
+    }
+    30% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.form_main_area {
+    
+    z-index: 0;
+
+
+
+    width: 67%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    
+
+    /* border: 1px solid grey; */
+
+
+    border-top-left-radius: var(--form-border-radius);
+    border-bottom-left-radius: var(--form-border-radius);
+
+    box-shadow: 0 1px 2px 1px grey;
+
+}
+
+form {
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.main_inputs {
+    
+    position: relative;
+    top: 5%;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: red; */
+    width: 81%;
+    /* min-height: 50%; */
+    flex-wrap: wrap;
+}
+
+
+
+input {
+    top: 7%;
+    width: 46%;
+    height: var(--input-height);
+    position: relative;
+    margin-bottom: 3.5%;
+
+    color: black;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+
+select {
+    min-width: 100%;
+    height: var(--input-height);
+    border-radius: 10px;
+    color: rgba(0, 0, 0, 0.65);
+
+}
+
+input:hover, input:active, textarea:hover, textarea:active, select:hover {
+    border: 2px solid rgb(43, 125, 233);
+}
+
+textarea {
+    margin: 7% 0 0 0;
+    height: 50%;
+    width: 84%;
+
+    resize: none;
+    border-radius: 20px;
+}
+
+
+.send {
+    z-index: 1;
+
+    border-radius: 8px;
+    font-size: 1.3em;
+    font-weight: 700;
+    transition: all 0.6s;
+
+    width: 130px;
+    height: 32px;
+
+    font-size: 1.1em;
+
+    border: none;
+    color: white;
+
+    background-image: linear-gradient(to bottom, rgba(0, 255, 109, 1) 50%, rgba(0, 206, 169, 1) 60%, rgb(0, 204, 255) 100%);
+    -webkit-background-size: 700%;
+    background-position: 50% 55%;
+    box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.2);
+
+    animation: CTA_enter 1s ease-in-out;
+}
+
+
+.send:hover {
+    background-position: center bottom;
+    cursor: pointer;
+    
+    transition: all 0.4s;
+    box-shadow: 9px 8px 6px 0px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+
+}
+
+.send:active {
+    transform: translateY(2px);
+
+    position: relative;
+    top: 4px;
+    box-shadow: 4px 2px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ================================== Form Contact Area ================================== */
+
+h1 {
+    font-size: 1.6em;
+    color: white;
+}
+
+h3 {
+    font-size: 1.1em;
+    color: white;
+}
+
+.form_contact_info {
+    height: 100%;
+    width: 33%;
+    background-image: var(--primary-gradient);
+
+    border-top-right-radius: var(--form-border-radius);
+    border-bottom-right-radius: var(--form-border-radius);
+
+    overflow: hidden;
+    position: relative;
+
+    box-shadow: 0 1px 2px 1px grey;
+
+    display: flex;
+    justify-content: center;
+    
+    flex-wrap: wrap;
+
+}
+
+#contact_info {
+    width: 100%;
+    /* background-color: red; */
+    height: 58%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.big_shadow {
+    width: 90px;
+    position: absolute; 
+    bottom: -50px;
+    right: 0;
+
+}
+
+.circle_shadow {
+    width: 36px;
+    position: absolute;
+    right: 32%;
+    bottom: 22%;
+}

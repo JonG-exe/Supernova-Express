@@ -1,0 +1,78 @@
+
+/* ================================== NEW NAV ================================== */
+
+nav {
+    /* position: absolute;
+    top: 60px;
+    left: 140px; */
+
+    position: absolute;
+    top: 8%;
+    left: 9.1%;
+
+    /* width: 290px; */
+    /* height: 60px; */
+
+    width: 19%;
+    height: 8%;
+    background-image: linear-gradient(110deg, rgba(1, 125, 254, 1) 35%, rgba(0, 111, 227, 1) 50%, rgba(0, 104, 212, 1) );
+    border-radius: 30px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.logo {
+    width: 60%;
+}
+
+.meet_mauri {
+    font-size: 1.4em;
+    font-weight: bold;
+    position: relative;
+    left: -30px;
+
+}
+
+.meet_mauri > span {
+    color: rgba(0, 255, 109, 1);
+    
+}
+
+li {
+    margin-left: 20px;
+    list-style: none;
+    
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    
+}
+
+@media screen and (max-width: 960px) {
+    nav {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .logo {
+        width: 250%
+    }
+
+    .meet_mauri {
+        display: none;
+    }
+
+}

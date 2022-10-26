@@ -15,6 +15,9 @@
     --background-color: white;
 
     --input-height: 40px;
+
+    --form-border-radius: 2px;
+
 }
 
 body {
@@ -28,6 +31,10 @@ body {
     justify-content: center;
     align-items: center;
 
+    /* background-image: url("../images/top_arc.png");
+    background-repeat: no-repeat;
+    background-position-x: 100%; */
+
 }
 
 /* ================================== ARCs ================================== */
@@ -36,13 +43,25 @@ body {
     pointer-events: none;
 }
 
-
 .top_arc {
+    z-index: -2;
     position: absolute;
-    top: -380px;
-    /* right: -390px; */
-    right: -420px;
+    max-width: 100%;
+    width: 100%;
+    top: -50%; 
+    right: -27%;
 
+    animation: top_arc_anim 3s forwards;
+
+}
+
+@keyframes top_arc_anim {
+    from {
+        transform: translateX(7%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 
 /* ================================== Form Main Area ================================== */
@@ -107,7 +126,7 @@ select > option {
         transform: rotate(0deg);
     }
     15% {
-        transform: rotate(20deg);
+        transform: rotate(-20deg);
     }
     30% {
         transform: rotate(0deg);
@@ -118,22 +137,13 @@ select > option {
 }
 
 .form_main_area {
-    
     z-index: 0;
-
-
-
     width: 67%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.3);
-    
-
     /* border: 1px solid grey; */
-
-
     border-top-left-radius: var(--form-border-radius);
     border-bottom-left-radius: var(--form-border-radius);
-
     box-shadow: 0 1px 2px 1px grey;
 
 }
@@ -171,6 +181,9 @@ input {
     color: black;
     border-radius: 10px;
     border: 1px solid grey;
+
+    border-radius: 3px;
+
 }
 
 select {
@@ -178,6 +191,8 @@ select {
     height: var(--input-height);
     border-radius: 10px;
     color: rgba(0, 0, 0, 0.65);
+
+    border-radius: 2px;
 
 }
 
@@ -192,13 +207,14 @@ textarea {
 
     resize: none;
     border-radius: 20px;
+    border-radius: 2px;
 }
 
 
 .send {
     z-index: 1;
 
-    border-radius: 8px;
+    border-radius: 2px;
     font-size: 1.3em;
     font-weight: 700;
     transition: all 0.6s;
@@ -257,7 +273,9 @@ h3 {
     background-image: var(--primary-gradient);
 
     border-top-right-radius: var(--form-border-radius);
-    border-bottom-right-radius: var(--form-border-radius);
+    /* border-bottom-right-radius: var(--form-border-radius); */
+
+    border-bottom-right-radius: 30px;
 
     overflow: hidden;
     position: relative;

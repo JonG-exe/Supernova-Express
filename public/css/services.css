@@ -1,17 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
 }
 
 html {
     scroll-behavior: smooth;
 }
-
-::-webkit-scrollbar {
-    width: 0px;
-}
-
 
 :root {
     --primary-color: rgba(14, 126, 197, 1);
@@ -21,63 +15,316 @@ html {
 body {
     width: 100vw;
     height: 100vh;
-
     overflow-x: hidden;
-    /* background-color: rgba(0, 0, 0, 0.01); */
-    background-color: rgba(0, 0, 0, 0.02);
+    /* width: 100%;
+    height: 100%; */
+    background-color: rgba(0, 0, 0, 0.01);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; */
 }
 
-
-/* ================================== ARCs ================================== */
-
-.arc {
-    pointer-events: none;
+body::-webkit-scrollbar {
+    display: none;
 }
 
-
-.top_arc {
+.wrapper {
     z-index: -2;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, #0353FC, #0094FE);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    position: absolute;
-    top: -380px;
-    /* right: -390px; */
-    right: -420px;
+#section_1 {
+    width: 100vw;
+    height: 100vh;
+}
+
+section {
+    /* width: 98vw;
+    height: 97vh; */
+    width: 97%;
+    height: 96%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: grey;
+    font-weight: 400;
+    background-color: white;
+
+    box-shadow: -1px 0 10px 1px rgba(0, 0, 0, 0.4),
+                1px 0 10px 1px rgba(0, 0, 0, 0.4);
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    height: 75%;
+    width: 77%;
+    width: 85%;
+    max-height: 85%;
+}
+
+
+.container-reverse {
+    flex-direction: row-reverse;
+}
+
+.section-one {
+    
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 400px;
+    min-width: 35%;
+    height: 80%;
 
 }
 
 
-/* ================================== MAIN ================================== */
+
+.section-two {
+    max-width: 50%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+
+}
 
 
-main {
+.insurance_box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-self: center; */
+    /* border: 5px solid orangered; */
+}
+
+.slide_btn {
+    width: 100%;
+    height: 20%;
+    transition: all 0.32s;
+}
+
+.slide_btn:hover {
+    transform: translateX(-40px);
+    transition: all 0.32s;
+}
+
+.insurance_btn {
+    z-index: 1;
+    max-width: 310px;
+    height: 87%;
+    background-color: white;
+    border: 1px solid rgb(214, 205, 205);
+    margin-top: 15px;
+    box-shadow: 2px 4px 7px  rgba(129, 129, 129, 0.749);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid blue; */
+    position: relative;
+
+    border-radius: 15px;
+    /* opacity: 0; */
+}
+
+.insurance_btn:hover {
+    transform: translateX(-40px);
+    box-shadow: 4px 8px 7px  rgba(129, 129, 129, 0.749);
+    border: 2px solid rgba(13, 120, 197, 1);
+}
+
+.insurance_btn > img {
+    margin-left: 10%;
+    width: 20%;
+    max-height: 90%;
+    /* position: absolute;
+    left: 25px; */
+    transition: all .85s;
+}
+
+.insurance_btn > h3 {
+    font-size: 1.5vw;
+    color: var(--primary-color);
     position: absolute;
-    top: 18%;
+    left: 35%;
+}
 
-    left: 206px;
+.btn_1 {
+    animation: enter_page 3s 0s 1 normal ease both, btn_breathe 10s 7.55s infinite normal ease-in-out;
+
+}.btn_2 {
+    animation: enter_page 3s 0.25s normal ease both, btn_breathe 10s 7.85s infinite normal ease-in-out;
+
+    left: 35px;
+
+}.btn_3 {
+    animation: enter_page 3s 0.5s normal ease both, btn_breathe 10s 8.15s infinite normal ease-in-out;
+
+    left: 70px;
+
+}.btn_4 {
+    animation: enter_page 3s 0.75s normal ease both, btn_breathe 10s 8.45s infinite normal ease-in-out;
+
+    left: 105px;
+}
+
+.section-image {
+    align-self: center;
+    z-index: 2;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+.section-home {
+    position: relative;
+}
+
+.family-image {
+    max-width: 85%;
+    animation: family_startup 2s ease 1, family_continuous 10s 2s ease infinite alternate;
+}
+
+/* ---------------- Home ------------------ */
+
+.home-image {
+    position: relative;
+    z-index: 0;
+    justify-self: center;    
+    max-width: 450px;
+    width: 85%;
+
+    /* animation: home_anim 3.5s paused; */
+
+    animation-name: home_anim;
+    animation-duration: 3.5s;
+    animation-play-state: paused;
+}
+
+.section-home > img {
+    min-width: 100px;
+}
+
+/* --------------- Car ----------------- */
+
+.car-image {
+    z-index: 1;
+    position: absolute;
+    bottom: 2%;
+    left: 34%;
+    width: 72%;
+    max-width: 350px;
+
+    transition: transform 1s ease-out;
+    animation: car_anim 3.5s ease-out;
+}
+
+.car-image:hover {
+    transform: scale(1.05);
+    transition: transform 0.25s ease-in;
+}
+
+.get-quote {
+    width: 180px;
+    height: 45px;
+    margin-top: 40px;
+    border: 1px solid grey;
+    background-image: linear-gradient(to right, #017DFE 50%, #013F7F);
 
     display: flex;
-    flex-wrap: wrap;
-    width: 30vw;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.2em;
+    color: white;
+
+    font-weight: 550;
+    
+    transition: transform 0.25s;
 }
 
-.main_image {
-   
-    z-index: 2;
 
-    /* width: 500px; */
-    top: 106px;
+/* --------------- Trees * ------------------ */
 
+.tree {
+    z-index: 0;
     position: absolute;
-    /* right: 320px; */
-    right: 260px;
-    width: 490px;
-
-    pointer-events: none;
-
-    /* animation: family_startup 2s ease, family_continuous 7s ease 2s infinite alternate; */
-    animation: family_startup 2s ease 1, family_continuous 10s 2s ease infinite alternate;
-
+    width: 30%;
+    top: 28%;
 }
+
+.tree-one {
+    left: -8%;
+    animation: tree_anim 2.5s ease-out;
+}
+
+.tree-two {
+    right: -8%;
+    animation: tree_anim 3.5s ease-out;
+}
+
+
+h2 {
+    font-size: 3.5vw;
+    background-image: linear-gradient(to bottom right, #017DFE 50%, #013F7F);
+    color: transparent;
+    -webkit-background-clip: text;
+    margin-bottom: 30px;
+}
+
+/* -------------------- Section 3 - Rectangles ---------------------- */
+
+.section-health {
+    position: relative;
+}
+
+.health-image {
+    z-index: 1;
+    width: 100%;
+    animation: health_img_move 2s ease-out, health_img_anim 15s 2s ease-in-out infinite alternate;
+}
+
+.rect_sec_3 {
+    z-index: 0;
+    width: 58%;
+    height: 135%; 
+    border: 1px solid grey;
+}
+
+.blue_rect_sec_3 {
+    background-image: linear-gradient(to bottom, #017DFE, #013F7F);
+    position: absolute;
+    top: -20%;
+    right: 12%;
+
+    animation: blue_rect_move 2s ease-out, blue_rect_anim 10s 2s ease-out infinite alternate;
+}
+
+.transparent_rect_sec_3 {
+    position: absolute;
+    top: -8%;
+    right: 18%;
+
+    filter: blur(10);
+    background-color: #8B8B8B;
+    opacity: 60%;
+
+    animation: transparent_rect_move 3s, transparent_rect_anim 10s 3s ease-out infinite alternate;
+}
+
+/* ------------------------------- All Animations ------------------------- */
 
 @keyframes family_startup {
     from {
@@ -105,20 +352,6 @@ main {
     }
 }
 
-h1 {
-    font-size: 2.5em;
-}
-
-
-/* ================================== Services ================================== */
-
-.insurance_box {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-
-}
 
 @keyframes enter_page {
     from {
@@ -148,145 +381,6 @@ h1 {
 }
 
 
-.btn_1 {
-    animation: enter_page 3s 0s 1 normal ease both, btn_breathe 10s 7.55s infinite normal ease-in-out;
-
-}.btn_2 {
-    animation: enter_page 3s 0.25s normal ease both, btn_breathe 10s 7.85s infinite normal ease-in-out;
-
-    left: 35px;
-
-}.btn_3 {
-    animation: enter_page 3s 0.5s normal ease both, btn_breathe 10s 8.15s infinite normal ease-in-out;
-
-    left: 70px;
-
-}.btn_4 {
-    animation: enter_page 3s 0.75s normal ease both, btn_breathe 10s 8.45s infinite normal ease-in-out;
-
-    left: 105px;
-}
-
-.slide_btn {
-    transition: all 0.32s;
-}
-
-.slide_btn:hover {
-    transform: translateX(-40px);
-    transition: all 0.32s;
-
-}
-
-.insurance_btn {
-
-    z-index: 1;
-
-    width: 340px;
-    height: 83px;
-
-
-    background-color: white;
-    border: 1px solid rgb(214, 205, 205);
-    border-radius: 20px;
-
-    
-    margin-top: 15px;
-    box-shadow: 2px 4px 7px  rgba(129, 129, 129, 0.749);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: relative;
-    opacity: 0;
-
-}
-
-.insurance_btn:hover {
-    transform: translateX(-40px);
-    box-shadow: 4px 8px 7px  rgba(129, 129, 129, 0.749);
-
-    border: 2px solid rgba(13, 120, 197, 1);
-
-}
-
-.insurance_btn > img {
-    width: 70px;
-    position: absolute;
-    left: 25px;
-
-    transition: all .85s;
-}
-
-.insurance_btn > h3 {
-    font-size: 1.35em;
-    color: var(--primary-color);
-    position: absolute;
-    left: 115px;
-}
-
-.insurance_btn > h3:hover {
-    cursor: pointer;
-    color: var(--secondary-color);
-}
-
-.insurance_btn > img:hover {
-    cursor: pointer;
-    transform: scale(1.55);
-
-    transition: all 1s;
-}
-
-
-
-
-/* ======================================================== Section_2 ============================================================ */
-
-#section_2 {
-    position: relative;
-    top: 100%;
-    width: 100%;
-    height: 100vh;
-
-
-    /* top: 110%; */
-    /* left: 110vw; */
-
-}
-
-.section_2_design {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-
-    left: 50px;
-    display: flex;
-}
-
-.x {
-    transition: transform 1s;
-}
-
-
-.x_1_sec_2 {
-    position: absolute;
-    top: 13%;
-    left: 7.5%;
-
-    animation: x_rotate 0.7s 3.5s ease-in-out, x_periodic_rotate 8s 5s infinite;
-}
-
-.x_2_sec_2 {
-    position: absolute;
-    bottom: 17%;
-    left: 33%;
-    transition: transform 1s;
-
-    width: 17px;
-
-    animation: x_rotate 0.5s 4.6s ease-in-out, x_periodic_rotate 8s 5s infinite reverse;
-
-}
-
 @keyframes x_rotate {
     0% {
         transform: rotate(0);
@@ -310,78 +404,6 @@ h1 {
 }
 
 
-.x_3 {
-    position: absolute;
-    bottom: -11%;
-    right: -3%;
-    transition: transform 1s;
-}
-
-.x:hover {
-    transform: scale(0.5) rotate(360deg);
-}
-
-.rect {
-    width: 26%;
-    height: 70%;
-    border: 1px solid grey;
-
-}
-
-.blue_rect {
-    background-image: linear-gradient(to bottom, #017DFE, #013F7F);
-    position: relative;
-    top: 10%;
-    left: 12%;
-}
-
-.transparent_rect {
-
-    position: absolute;
-    top: 20%;
-    left: 15%;
-
-    filter: blur(10);
-    background-color: #8B8B8B;
-    opacity: 60%;
-}
-
-.mainContent_sec_2 {
-    
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    right: 11.5%;
-    top: 20%;
-
-}
-
-.mainContent_sec_2 h2 {
-    font-size: 4em;
-    background-image: linear-gradient(to bottom right, #017DFE 50%, #013F7F);
-    color: transparent;
-    -webkit-background-clip: text;
-    margin-bottom: 30px;
-}
-
-.mainContent_sec_2 p {
-    color: rgba(0, 0, 0, 0.7);
-    font-size: 1.28em;
-    line-height: 24px;
-}
-
-.car_img_sec_2 {
-    z-index: 1;
-    width: 350px;
-    position: absolute;
-    left: 22%;
-    top: 50%;
-
-    transition: transform 1s ease-out;
-    animation: car_anim 3.5s ease-out;
-}
-
 @keyframes car_anim {
     0% {
         transform: translateX(-1000px);
@@ -389,32 +411,6 @@ h1 {
     100% {
         transform: translateX(0);
     }
-}
-
-.car_img_sec_2:hover {
-    transform: scale(1.05);
-    transition: transform 0.25s ease-in;
-}
-
-
-.tree {
-    width: 180px;
-    position: absolute;
-    top: 28%;
-
-}
-
-.tree_one {
-    left: 3%;
-    
-    animation: tree_anim 2s ease-out;
-}
-
-.tree_two {
-    left: 35%;
-
-    animation: tree_anim 3s ease-out;
-
 }
 
 @keyframes tree_anim {
@@ -426,15 +422,6 @@ h1 {
     }
 }
 
-.circular_home {
-    width: 450px;
-    position: absolute;
-    top: 15%;
-    left: 10%;
-
-    animation: home_anim 3.5s;
-}
-
 @keyframes home_anim {
     0% {
         transform: scale(0.5);
@@ -444,113 +431,6 @@ h1 {
     }
 }
 
-.car_CTA {
-    width: 180px;
-    height: 45px;
-    margin-top: 40px;
-    border: 1px solid grey;
-    background-image: linear-gradient(to right, #017DFE 50%, #013F7F);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 1.2em;
-    color: white;
-
-    font-weight: 550;
-    
-    transition: transform 0.25s;
-}
-
-.car_CTA:hover {
-    transition: transform 0.25s;
-    transform: scale(0.9);
-}
-
-
-
-/* ======================================================== Section_3 ============================================================ */
-
-#section_3 {
-    position: relative;
-    top: 100%;
-    width: 100%;
-
-
-    height: 100vh;
-}
-
-.section_3_design {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-
-    display: flex;
-}
-
-.triangle_aesthetic {
-
-    transform: rotate(-10deg);
-    width: 150px;
-    position: absolute;
-    left: -3.5%;
-}
-
-.x {
-    transition: transform 1s;
-}
-
-.x_1_sec_3 {
-    position: absolute;
-    top: 13%;
-    right: 12%;
-    /* transform: scale(0.7); */
-    width: 40px;
-
-    animation: x_rotate 0.7s 3.5s ease-in-out, x_periodic_rotate 8s 5s infinite;
-
-}
-
-.x_2_sec_3 {
-    position: absolute;
-    bottom: 5%;
-    right: 41%;
-    /* transform: scale(0.3); */
-    transition: transform 1s;
-    width: 17px;
-
-    animation: x_periodic_rotate 3.25s 4.85s infinite reverse;
-
-   
-}
-
-.x_3_sec_3 {
-    position: absolute;
-    bottom: -11%;
-    right: -3%;
-    transition: transform 1s;
-}
-
-.x:hover {
-    transform: scale(0.5) rotate(360deg);
-}
-
-.rect_sec_3 {
-    width: 25%;
-    height: 70%;
-    border: 1px solid grey;
-
-}
-
-.blue_rect_sec_3 {
-    background-image: linear-gradient(to bottom, #017DFE, #013F7F);
-    position: absolute;
-    top: 12%;
-    right: 18%;
-
-    animation: blue_rect_move 2s ease-out, blue_rect_anim 10s 2s ease-out infinite alternate;
-}
 
 @keyframes blue_rect_move {
     from {
@@ -570,17 +450,6 @@ h1 {
     }
 }
 
-.transparent_rect_sec_3 {
-    position: absolute;
-    top: 18%;
-    right: 21%;
-
-    filter: blur(10);
-    background-color: #8B8B8B;
-    opacity: 60%;
-
-    animation: transparent_rect_move 3s, transparent_rect_anim 10s 3s ease-out infinite alternate;
-}
 
 @keyframes transparent_rect_move {
     from {
@@ -600,15 +469,6 @@ h1 {
     }
 }
 
-.health_main_img {
-    z-index: 1;
-    position: absolute;
-    top: 24%;
-    right: 16%;
-    width: 550px;
-
-    animation: health_img_move 2s ease-out, health_img_anim 15s 2s ease-in-out infinite alternate;
-}
 
 @keyframes health_img_move {
     from {
@@ -627,184 +487,112 @@ h1 {
         transform: scale(0.9);
     }
 }
+/* ---------------------------- Media Queries ---------------------------- */
 
-.mainContent_sec_3 {
+@media screen and (max-width: 960px) {
+
+    .container {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: flex-end;
+
+        width: 100%;
+        min-height: 80%;
+    }
+
+    .section-one {
+        margin-top: 3%;
+        align-items: center;
+        position: relative; 
+        top: -1%;
+        width: 50%;
+        min-height: 350px;
+        min-width: 90%;
+    }
+
+    .section-main {
+        max-width: 310px;
+        min-width: 225px;
+    }
+
+    .section-two {
+        flex-grow: 0;
+        max-height: 60%;
+        width: 80%;
+    }
+
+    .section-image {
+        max-height: 100%;
+        min-height: 130px;
+        min-width: 125px;
+    }
+
+    body {
+        overflow-y: scroll;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    br {
+        display: none;
+    }
+
+    p,
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        font-size: 2.7vh;
+    }
+
+    h1 {
+        font-size: 4vh;
+    }
+
+    .CTA {
+        margin-top: 37px;
+        border-radius: 3px;
+        font-size: 2vw;
+        font-weight: 700;
+        transition: all 0.35s;
+    }
     
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 13%;
-    top: 20%;
-    
-    /* transform: scale(0.95); */
+    .CTA_1 {
+        height: 40%;
+        width: 10px;
+        margin-bottom: 15px;
+    }
 
+    .insurance_btn {
+        animation: none;
+        left: 0;
+        border-radius: 10px;
+    }
+
+    .insurance_btn > h3 {
+        font-size: 15px;
+        color: var(--primary-color);
+        position: absolute;
+        left: 35%;
+    }
 }
 
-.mainContent_sec_3 h2 {
-    background-image: linear-gradient(to bottom right, #017DFE 50%, #013F7F);
-    color: transparent;
-    -webkit-background-clip: text;
-    font-size: 4em;
-    margin-bottom: 30px;
+@media screen and (max-width: 400px) {
+    .get-quote {
+        font-size: 0.9rem;
+    }
 }
 
-.mainContent_sec_3 p {
-    color: rgba(0, 0, 0, 0.7);
-    font-size: 1.28em;
-    line-height: 24px;
+.reveal {
+    animation-play-state: paused;
+    opacity: 0;
 }
 
-
-
-.car_CTA {
-    width: 180px;
-    height: 45px;
-    margin-top: 40px;
-    border: 1px solid grey;
-    background-image: linear-gradient(to right, #017DFE 50%, #013F7F);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 1.2em;
-    color: white;
-
-    font-weight: 550;
-    
-    transition: transform 0.25s;
-}
-
-
-/* ======================================================== Section_4 ============================================================ */
-
-#section_4 {
-    position: relative;
-    top: 100%;
-    width: 100%;
-
-    overflow: hidden;
-
-    height: 100vh;
-}
-
-.section_4_design {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-
-    display: flex;
-}
-
-.x {
-    transition: transform 1s;
-}
-
-.x_1 {
-    position: absolute;
-    top: 13%;
-    left: 7.5%;
-    transform: scale(0.7);
-}
-
-.x_2 {
-    position: absolute;
-    bottom: 3%;
-    left: 36%;
-    transform: scale(0.3);
-    transition: transform 1s;
-}
-
-.x_3 {
-    position: absolute;
-    bottom: -11%;
-    right: -3%;
-    transition: transform 1s;
-}
-
-.x:hover {
-    transform: scale(0.5) rotate(360deg);
-}
-
-.rect {
-    width: 26%;
-    height: 70%;
-    border: 1px solid grey;
-
-}
-
-.blue_rect {
-    background-image: linear-gradient(to bottom, #017DFE, #013F7F);
-    position: relative;
-    top: 10%;
-    left: 12%;
-}
-
-.transparent_rect {
-
-    position: absolute;
-    top: 20%;
-    left: 15%;
-
-    filter: blur(10);
-    background-color: #8B8B8B;
-    opacity: 60%;
-}
-
-.mainContent {
-    
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    right: 18%;
-    top: 20%;
-
-}
-
-.mainContent h2 {
-    background-image: linear-gradient(to bottom right, #017DFE 50%, #013F7F);
-    color: transparent;
-    -webkit-background-clip: text;
-    font-size: 4em;
-    margin-bottom: 30px;
-}
-
-.mainContent p {
-    color: rgba(0, 0, 0, 0.7);
-    font-size: 1.28em;
-    line-height: 24px;
-}
-
-.car_img {
-    z-index: 1;
-    width: 600px;
-    position: absolute;
-    left: 12%;
-    top: 30%;
-}
-
-.car_CTA {
-    width: 180px;
-    height: 45px;
-    margin-top: 40px;
-    border: 1px solid grey;
-    background-image: linear-gradient(to right, #017DFE 50%, #013F7F);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 1.2em;
-    color: white;
-
-    font-weight: 550;
-    
-    transition: transform 0.25s;
-}
-
-.car_CTA:hover {
-    transition: transform 0.25s;
-    transform: scale(0.9);
+.revealed {
+    transition: all 2s ease-out;
+    opacity: 1;
+    animation-play-state: running;
 }
